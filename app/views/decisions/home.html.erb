@@ -1,0 +1,46 @@
+<div class="container">
+
+
+	<h1 class="text-center">Welcome to AnswerGuru.</h1>
+<!-- 	<h3 class="text-center">Sign up to get help making a decision!</h3> -->
+
+	<div class="signUpForm text-center" style="width: 300px; margin: 0 auto;"> <br />
+
+		<%= button_to "Sign up here!", new_user_path, method: :get, :class => "btn green btn-lg btn-primary btn-block" %>
+		<%#= form_for @user do |f| %>
+			<%#= f.text_field :name, placeholder: "What is your name?" %> 
+			<%# f.text_field :email, placeholder: "Email" %>
+			<%#= f.password_field :password, placeholder: "password..." %>
+			<%#= f.password_field :password_confirmation, placeholder: "re-enter password" %>
+			<%#= f.submit "Sign up!", :class => "btn btn-default btn-md btn-blue signBtn" %>
+		<%# end  if !current_user %>
+
+	</div>
+	
+	<br /><br />
+
+	
+	<h3 class="text-center">Already have an account? </h3>
+
+<div class="logIn text-center ">
+
+	<%= form_for @user, {url: session_path} do |f| %>
+        <form class="form-signin" role="form">
+	        <h2 class="form-signin-heading">Log in</h2><br />
+	        <%= f.text_field :email, placeholder: "Email", :class => "form-control" %>
+	        <%= f.password_field :password, placeholder: "password", :class => "form-control"  %><br />
+<!-- 	        <div class="checkbox">
+	          <label>
+	            <input type="checkbox" value="remember-me"> Remember me
+	          </label>
+	        </div> -->
+	        <%= f.submit "Sign in", :class => "btn btn-lg btn-primary btn-block" %>
+      	</form>
+    <% end %>
+
+    	<br />
+
+
+
+    	<br /><br /><br />
+</div>
